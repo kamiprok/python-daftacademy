@@ -37,10 +37,10 @@ async def method_put():
 async def method_delete():
     return {"method": "DELETE"}
 
-global count
-count = 0
+
+count: int = 0
 @app.post('/patient')
 async def patient(name: str, surename: str):
     global count
     count += 1
-    return {"id": count, "name": name, "surename": surename}
+    return {"id": count, "patient": {"name": name, "surename": surename}}
