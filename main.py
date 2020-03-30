@@ -38,9 +38,24 @@ async def method_delete():
     return {"method": "DELETE"}
 
 
-count: int = 0
+# count: int = 0
+# @app.post('/patient')
+# def patient(name: str, surename: str):
+#     global count
+#     count += 1
+#     return {"id": count, "patient": {"name": name, "surename": surename}}
+
+
+class Patient(BaseModel):
+    name: str
+    surename: str
+
+
+count = 0
+
+
 @app.post('/patient')
-async def patient(name: str, surename: str):
+def patient(patients: Patient):
     global count
     count += 1
-    return {"id": count, "patient": {"name": name, "surename": surename}}
+    return {"id": count, "patient": patients}
