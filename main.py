@@ -18,21 +18,21 @@ def hello_name(name: str):
     return HelloNameResp(message=f"Hello {name}")
 
 
-@app.get('/method/GET')
+@app.get('/method')
 def method_get():
     return {"method": "GET"}
 
 
-@app.post('/method/POST')
+@app.post('/method')
 async def method_post():
     return {"method": "POST"}
 
 
-@app.put('/method/PUT')
+@app.put('/method')
 async def method_put():
     return {"method": "PUT"}
 
 
-@app.delete('/method/DELETE')
+@app.delete('/method')
 async def method_delete():
     return {"method": "DELETE"}
